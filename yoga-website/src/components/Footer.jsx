@@ -1,6 +1,6 @@
 // src/components/Footer.jsx
 import React from "react";
-
+import { Facebook, Instagram } from 'lucide-react';
 const Footer = () => {
   return (
     <footer className="bg-green-800 text-green-200 py-8 mt-16">
@@ -10,30 +10,38 @@ const Footer = () => {
         </p>
 
         <div className="flex space-x-6">
-          <a
+          {/* <a
             href="mailto:jimmy@example.com"
             className="hover:text-white transition"
             aria-label="Email"
           >
             📧
-          </a>
+          </a> */}
           <a
-            href="https://www.facebook.com/yogawithjimmy"
+            href="https://www.facebook.com/share/16dwNnZdio/?mibextid=wwXIfr"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white transition"
             aria-label="Facebook"
           >
-            👍
+            <img
+    src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
+    alt="Facebook"
+    className="w-6 h-6"
+  />
           </a>
           <a
-            href="https://www.instagram.com/yogawithjimmy"
+            href="https://www.instagram.com/urbanyoginz?igsh=MTQ2dWU3OHk1NDBzYQ=="
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white transition"
             aria-label="Instagram"
           >
-            📸
+            <img
+    src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+    alt="Instagram"
+    className="w-6 h-6"
+  />
           </a>
         </div>
       </div>
