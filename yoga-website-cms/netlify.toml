@@ -1,0 +1,6 @@
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 401
+  force = true
+  conditions = { BasicAuth = ["jimmyadmin:Qureshi040186$"] }
