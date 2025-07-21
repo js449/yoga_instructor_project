@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { client } from '../sanityClient'; // use default import unless you export differently
+import { client } from '../sanityClient';
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -24,17 +24,25 @@ const Classes = () => {
       .catch(console.error);
   }, []);
 
-  if (!classes.length) return <p className="text-center mt-12">Loading classes...</p>;
+  if (!classes.length) return <p className="text-center mt-12 font-poppins">Loading classes...</p>;
 
   return (
     <section className="py-16 px-4 max-w-6xl mx-auto font-poppins" id="classes">
-      <h1 className="font-playfair text-2xl sm:text-3xl md:text-4xl font-semibold text-center mb-16">
+      <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-semibold text-center mb-16 text-gray-900">
         Let's do some yoga with Jimmy
       </h1>
 
-      <h3 className="font-playfair text-xl font-semibold text-center mb-12">Our Yoga Classes</h3>
+      <h3 className="font-playfair text-2xl font-semibold text-center mb-12 text-green-800">
+        Our Yoga Classes
+      </h3>
 
-      <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
+      <div
+        className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-stretch"
+        style={{
+          gridAutoRows: "1fr",
+          gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+        }}
+      >
         {classes.map((cls) => (
           <ClassCard key={cls._id} cls={cls} />
         ))}
@@ -54,25 +62,37 @@ const ClassCard = ({ cls }) => {
 
   return (
     <motion.div
-      className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-all duration-300 flex flex-col break-words"
+      className="flex flex-col bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300 break-words h-full"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4 }}
       style={{ overflowWrap: "break-word", wordWrap: "break-word" }}
     >
-      <h3 className="text-xl font-semibold text-gray-800 mb-1 font-playfair">{cls.name}</h3>
-      <p className="text-sm text-gray-600 mb-1">Instructor: {cls.instructor || "TBA"}</p>
-      <p className="text-sm text-gray-600 mb-2">
+      <h3 className="font-playfair text-xl font-semibold text-gray-900 mb-2">
+        {cls.name}
+      </h3>
+      <p className="font-poppins text-sm text-gray-700 mb-1">
+        Instructor: {cls.instructor || "TBA"}
+      </p>
+      <p className="font-poppins text-sm text-gray-700 mb-4">
         Price: {cls.price !== undefined && cls.price !== null ? `$${cls.price}` : "Contact for pricing"}
       </p>
-      <img
-        src={cls.image?.asset?.url}
-        alt={cls.name}
-        className="w-full h-48 object-cover rounded-t-lg mb-4"
-      />
-      <p className="text-sm text-gray-600 mb-2">Time: {cls.time || "TBA"}</p>
-      <p className="text-gray-700 mb-2 whitespace-pre-wrap">{displayedDesc}</p>
+
+      <div
+        className="w-full rounded-md overflow-hidden mb-6 border border-green-300 shadow-sm"
+        style={{ height: '380px' }}
+      >
+        <img
+          src={cls.image?.asset?.url}
+          alt={cls.name}
+          className="w-full h-full object-cover object-center"
+        />
+      </div>
+
+      <p className="font-poppins text-base text-gray-800 mb-4 leading-relaxed text-justify">
+        {displayedDesc}
+      </p>
 
       {isLong && (
         <button
