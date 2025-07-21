@@ -1,6 +1,8 @@
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 401
-  force = true
-  conditions = { BasicAuth = ["jimmyadmin:Qureshi040186$"] }
+[build]
+  command = "sanity build"
+  publish = "dist"  
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Authorization = "Basic amltbXlhZG1pbjpRdXJlc2hpMDQwMTg2JA=="
