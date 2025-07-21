@@ -1,6 +1,6 @@
 // src/components/Footer.jsx
 import React from "react";
-import { Facebook, Instagram } from 'lucide-react';
+import { FaFacebook, FaInstagram } from 'react-icons/fa';
 const Footer = () => {
   return (
     <footer className="bg-green-800 text-green-200 py-8 mt-16">
@@ -17,32 +17,24 @@ const Footer = () => {
           >
             📧
           </a> */}
-          <a
-            href="https://www.facebook.com/share/16dwNnZdio/?mibextid=wwXIfr"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white transition"
-            aria-label="Facebook"
-          >
-            <img
-    src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
-    alt="Facebook"
-    className="w-6 h-6"
-  />
-          </a>
-          <a
-            href="https://www.instagram.com/urbanyoginz?igsh=MTQ2dWU3OHk1NDBzYQ=="
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white transition"
-            aria-label="Instagram"
-          >
-            <img
-    src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
-    alt="Instagram"
-    className="w-6 h-6"
-  />
-          </a>
+              <a
+      href="https://www.facebook.com/share/16dwNnZdio/?mibextid=wwXIfr"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-blue-600 transition text-2xl"
+      aria-label="Facebook"
+    >
+      <FaFacebook />
+    </a>
+              <a
+      href="https://www.instagram.com/urbanyoginz?igsh=MTQ2dWU3OHk1NDBzYQ=="
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-pink-500 transition text-2xl"
+      aria-label="Instagram"
+    >
+      <FaInstagram />
+    </a>
         </div>
       </div>
     </footer>
