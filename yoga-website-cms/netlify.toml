@@ -1,8 +1,3 @@
 [build]
   command = "sanity build"
-  publish = "dist"  
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Authorization = "Basic amltbXlhZG1pbjpRdXJlc2hpMDQwMTg2JA=="
+  publish = "dist"
